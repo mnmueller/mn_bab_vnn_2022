@@ -3,6 +3,7 @@
 set -e
 
 VERSION_STRING=v1
+INSTALL_USER=ubuntu
 
 # check arguments
 if [ "$1" != ${VERSION_STRING} ]; then
@@ -17,5 +18,6 @@ fi
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-bash "$SCRIPT_DIR/../setup.sh"
+echo | sudo -u ${INSTALL_USER} bash "$SCRIPT_DIR/../setup.sh"
+
 
