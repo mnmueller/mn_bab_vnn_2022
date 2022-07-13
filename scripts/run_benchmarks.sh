@@ -1,0 +1,3 @@
+python src/verification_instance.py -is vnn-comp-2022-sup/benchmarks/mnist_fc/instances.csv > ./scripts/bench_mnist_fc_fast.txt 2>&1
+python src/verification_instance.py -c configs/vnncomp22/vnncomp22_prop_benchmark_ssadv_v2_geo_mean_0035.json > ./scripts/bench_ssadv_v2_0035_fast.txt 2>&1
+python src/verification_instance.py -c configs/vnncomp22/vnncomp22_prop_benchmark_geo_mean_0035.json > ./scripts/bench_v1_0035_fast.txt 2>&1
