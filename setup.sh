@@ -45,14 +45,6 @@ cd ELINA
 make
 sudo make install
 cd ..
-  
-
-# create virtual environment
-CONDA_PATH="$HOME/anaconda3/bin/conda"
-echo | ${CONDA_PATH} update -n base conda
-echo | ${CONDA_PATH} create -n prima4complete python=3.7
-echo | ${CONDA_PATH} init bash
-echo | ${CONDA_PATH} activate prima4complete
 
 wget https://packages.gurobi.com/9.1/gurobi9.1.2_linux64.tar.gz
 tar -xvf gurobi9.1.2_linux64.tar.gz
@@ -62,9 +54,15 @@ make
 cp libgurobi_c++.a ../../lib/
 cd ../../
 cp lib/libgurobi91.so /usr/local/lib
-python3 setup.py install
 cd ../../
 rm gurobi9.1.2_linux64.tar.gz
+
+# create virtual environment
+CONDA_PATH="$HOME/anaconda3/bin/conda"
+echo | ${CONDA_PATH} update -n base conda
+echo | ${CONDA_PATH} create -n prima4complete python=3.7
+echo | ${CONDA_PATH} init bash
+echo | ${CONDA_PATH} activate prima4complete
 
 export GUROBI_HOME="$(pwd)/gurobi912/linux64"
 export PATH="${PATH}:/usr/lib:${GUROBI_HOME}/bin"
