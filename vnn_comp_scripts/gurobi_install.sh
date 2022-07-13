@@ -25,5 +25,5 @@ startOpenConnect
 sleep 2
 OPENCONNECT_STATUS=$(checkOpenconnect)
 echo $OPENCONNECT_STATUS
-echo | sudo -u ${GUROBI_USER} ./gurobi912/linux64/bin/grbgetkey ${KEY}
+echo | sudo -u ${GUROBI_USER} ../gurobi912/linux64/bin/grbgetkey ${KEY}
 sudo killall -SIGINT openconnect
