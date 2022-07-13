@@ -55,7 +55,9 @@ conda activate prima4complete
 
   
 # install dependencies
-pip install -r requirements.txt
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+pip install -r  "$SCRIPT_DIR/requirements.txt"
   
 
 # add current directory to pythonpath
