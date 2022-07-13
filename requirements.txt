@@ -13,7 +13,7 @@ distlib==0.3.2
 dulwich==0.20.23
 everett==1.0.3
 filelock==3.0.12
-gurobipy==9
+gurobipy==9.1.2
 identify==2.2.10
 idna==2.10
 importlib-metadata==4.6.0
