@@ -73,6 +73,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib:${GUROBI_HOME}/l
 # install dependencies
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
+pip install --upgrade pip
 pip install -r  "$SCRIPT_DIR/requirements.txt"
   
 
