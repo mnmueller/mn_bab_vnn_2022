@@ -38,6 +38,20 @@ cd ..
 # git clone https://gitlab.inf.ethz.ch/markmueller/prima4complete.git
 # cd prima4complete
 
+# setup ELINA
+git clone https://github.com/eth-sri/ELINA.git
+cd ELINA
+./configure -use-deeppoly -use-fconv
+make
+sudo make install
+cd ..
+  
+
+# create virtual environment
+conda init bash
+conda create -n prima4complete python=3.7
+conda activate prima4complete
+
 wget https://packages.gurobi.com/9.1/gurobi9.1.2_linux64.tar.gz
 tar -xvf gurobi9.1.2_linux64.tar.gz
 cd gurobi912/linux64/src/build
@@ -55,21 +69,7 @@ export PATH="${PATH}:/usr/lib:${GUROBI_HOME}/bin"
 export CPATH="${CPATH}:${GUROBI_HOME}/include"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib:${GUROBI_HOME}/lib
 
-# setup ELINA
-git clone https://github.com/eth-sri/ELINA.git
-cd ELINA
-./configure -use-deeppoly -use-fconv
-make
-sudo make install
-cd ..
-  
 
-# create virtual environment
-conda init bash
-conda create -n prima4complete python=3.7
-conda activate prima4complete
-
-  
 # install dependencies
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
