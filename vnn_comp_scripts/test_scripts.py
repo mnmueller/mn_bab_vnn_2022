@@ -5,7 +5,7 @@ from typing import List, Tuple
 
 from src.utilities.argument_parsing import get_config_from_json
 
-TEMP_RUN_DIR = "run"
+TEMP_RUN_DIR = "../run"
 
 
 def load_instances(instance_path: str) -> List[Tuple[str, ...]]:
@@ -32,7 +32,7 @@ def adapt_config(var: str, val: str) -> None:
 def run(instance_path: str, vary: List[str]) -> None:
 
     instances = load_instances(instance_path)
-    out_path = "run/example_out.txt"
+    out_path = "../run/example_out.txt"
     # category, onnx, vnnlib, timeout
     for inst in instances:
         benchmark, onnx, spec, timeout = inst[:4]

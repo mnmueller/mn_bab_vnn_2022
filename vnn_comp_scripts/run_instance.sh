@@ -14,16 +14,15 @@ fi
 CATEGORY=$2
 ONNX_FILE=$3
 VNNLIB_FILE=$4
+RESULTS_FILE=$5
+TIMEOUT=$6
+
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-prepare_file="$SCRIPT_DIR/src/utilities/prepare_instance.py"
+run_file="$SCRIPT_DIR/../src/run_instance.py"
 
-echo "\n Preparing $TOOL_NAME for benchmark instance in category '$CATEGORY' with onnx file '$ONNX_FILE' and vnnlib file '$VNNLIB_FILE'"
+echo "Running $TOOL_NAME for benchmark instance in category '$CATEGORY' with onnx file '$ONNX_FILE' and vnnlib file '$VNNLIB_FILE' and timeout '$TIMEOUT'. Writing to '$RESULTS_FILE'"
 
-# kill any zombie processes
-# killall -q python3
-# killall -q python
-
-python $prepare_file --benchmark $CATEGORY --netname $ONNX_FILE --vnnlib_spec $VNNLIB_FILE
+python $run_file --benchmark $CATEGORY --netname $ONNX_FILE --vnnlib_spec $VNNLIB_FILE --results_path $RESULTS_FILE --timeout $TIMEOUT
 
 exit 0
