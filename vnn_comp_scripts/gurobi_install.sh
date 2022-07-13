@@ -22,7 +22,7 @@ function checkOpenconnect(){
 
 echo | apt-get install openconnect
 startOpenConnect
-sleep 2
+sleep 5
 OPENCONNECT_STATUS=$(checkOpenconnect)
 echo $OPENCONNECT_STATUS
 echo | sudo -u ${GUROBI_USER} ../gurobi912/linux64/bin/grbgetkey ${KEY}
