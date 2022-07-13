@@ -49,9 +49,9 @@ cd ..
 
 # create virtual environment
 CONDA_PATH="$HOME/anaconda3/bin/conda"
-echo | ${CONDA_PATH} conda update -n base conda
-echo | ${CONDA_PATH} init bash
+echo | ${CONDA_PATH} update -n base conda
 echo | ${CONDA_PATH} create -n prima4complete python=3.7
+echo | ${CONDA_PATH} init bash
 echo | ${CONDA_PATH} activate prima4complete
 
 wget https://packages.gurobi.com/9.1/gurobi9.1.2_linux64.tar.gz
