@@ -5,7 +5,6 @@ bunch==1.0.1
 certifi==2021.5.30
 cfgv==3.3.0
 chardet==4.0.0
-click==8.1.2
 comet-ml==3.12.2
 configobj==5.0.6
 cycler==0.10.0
@@ -50,7 +49,7 @@ semantic-version==2.8.5
 six==1.16.0
 tensorflow==2.9.1
 toml==0.10.2
-torch==1.11.0
+torch==1.12
 torchvision==0.12.0
 tqdm==4.63.1
 typed-ast==1.4.3
