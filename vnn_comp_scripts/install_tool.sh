@@ -11,10 +11,10 @@ if [ "$1" != ${VERSION_STRING} ]; then
 	exit 1
 fi
 
-if [ $(id -u) = 0 ]; then
-   echo "The script must not be run as root."
-   exit 1
-fi
+#if [ $(id -u) = 0 ]; then
+#   echo "The script must not be run as root."
+#   exit 1
+#fi
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
