@@ -38,6 +38,22 @@ cd ..
 # git clone https://gitlab.inf.ethz.ch/markmueller/prima4complete.git
 # cd prima4complete
 
+wget https://packages.gurobi.com/9.1/gurobi9.1.2_linux64.tar.gz
+tar -xvf gurobi9.1.2_linux64.tar.gz
+cd gurobi912/linux64/src/build
+sed -ie 's/^C++FLAGS =.*$/& -fPIC/' Makefile
+make
+cp libgurobi_c++.a ../../lib/
+cd ../../
+cp lib/libgurobi91.so /usr/local/lib
+python3 setup.py install
+cd ../../
+rm gurobi9.1.2_linux64.tar.gz
+
+export GUROBI_HOME="$(pwd)/gurobi912/linux64"
+export PATH="${PATH}:/usr/lib:${GUROBI_HOME}/bin"
+export CPATH="${CPATH}:${GUROBI_HOME}/include"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib:${GUROBI_HOME}/lib
 
 # setup ELINA
 git clone https://github.com/eth-sri/ELINA.git
