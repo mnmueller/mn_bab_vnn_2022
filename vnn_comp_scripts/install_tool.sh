@@ -18,7 +18,7 @@ fi
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-echo | sudo -u ${INSTALL_USER} bash "$SCRIPT_DIR/../setup.sh"
+echo | sudo -H -E -u ${INSTALL_USER} bash "$SCRIPT_DIR/../setup.sh"
 
 echo | chmod 777 gurobi_install.sh
 
