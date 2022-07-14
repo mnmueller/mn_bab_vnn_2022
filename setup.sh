@@ -53,29 +53,11 @@ sed -ie 's/^C++FLAGS =.*$/& -fPIC/' Makefile
 make
 cp libgurobi_c++.a ../../lib/
 cd ../../
-cp lib/libgurobi91.so /usr/local/lib
+sudo cp lib/libgurobi91.so /usr/local/lib
 cd ../../
 rm gurobi9.1.2_linux64.tar.gz
-
-# create virtual environment
-CONDA_PATH="$HOME/anaconda3/bin/conda"
-echo | ${CONDA_PATH} update -n base conda
-echo | ${CONDA_PATH} create -n prima4complete python=3.7
-echo | ${CONDA_PATH} init bash
-echo | ${CONDA_PATH} activate prima4complete
 
 export GUROBI_HOME="$(pwd)/gurobi912/linux64"
 export PATH="${PATH}:/usr/lib:${GUROBI_HOME}/bin"
 export CPATH="${CPATH}:${GUROBI_HOME}/include"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib:${GUROBI_HOME}/lib
-
-
-# install dependencies
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-
-pip install --upgrade pip
-pip install -r  "$SCRIPT_DIR/requirements.txt"
-  
-
-# add current directory to pythonpath
-export PYTHONPATH=$PYTHONPATH:$PWD
