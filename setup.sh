@@ -1,5 +1,7 @@
 # this script assumes that you are running on Ubuntu 18.04 and have sudo rights
 
+set +x
+
 # install dependencies
 echo "Installing m4"
 sudo apt-get install m4
