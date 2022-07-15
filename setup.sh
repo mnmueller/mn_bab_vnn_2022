@@ -5,7 +5,7 @@ echo "Installing m4"
 sudo apt-get install m4
 
 echo "Installing gmp"
-sudp apt-get install -y libgmp-dev
+sudo apt-get install -y libgmp-dev
 
 #wget https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz
 #tar -xvf gmp-6.1.2.tar.xz
