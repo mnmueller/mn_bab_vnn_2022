@@ -5,14 +5,16 @@ echo "Installing m4"
 sudo apt-get install m4
 
 echo "Installing gmp"
-wget https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz
-tar -xvf gmp-6.1.2.tar.xz
-cd gmp-6.1.2
-./configure --enable-cxx
-make
-sudo make install
-cd ..
-rm gmp-6.1.2.tar.xz
+sudp apt-get install -y libgmp-dev
+
+#wget https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz
+#tar -xvf gmp-6.1.2.tar.xz
+#cd gmp-6.1.2
+#./configure --enable-cxx
+#make
+#sudo make install
+#cd ..
+#rm gmp-6.1.2.tar.xz
 
 echo "Installing mpfr"
 wget https://files.sri.inf.ethz.ch/eran/mpfr/mpfr-4.1.0.tar.xz
