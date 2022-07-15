@@ -17,14 +17,15 @@ sudo apt-get install -y libgmp-dev
 #rm gmp-6.1.2.tar.xz
 
 echo "Installing mpfr"
-wget https://files.sri.inf.ethz.ch/eran/mpfr/mpfr-4.1.0.tar.xz
-tar -xvf mpfr-4.1.0.tar.xz
-cd mpfr-4.1.0
-./configure
-make
-sudo make install
-cd ..
-rm mpfr-4.1.0.tar.xz
+sudo apt-get install libmpfr-dev libmpfr-doc libmpfr4 libmpfr4-dbg
+#wget https://files.sri.inf.ethz.ch/eran/mpfr/mpfr-4.1.0.tar.xz
+#tar -xvf mpfr-4.1.0.tar.xz
+#cd mpfr-4.1.0
+#./configure
+#make
+#sudo make install
+#cd ..
+#rm mpfr-4.1.0.tar.xz
 
 echo "Installing cddlib"
 wget https://github.com/cddlib/cddlib/releases/download/0.94m/cddlib-0.94m.tar.gz
