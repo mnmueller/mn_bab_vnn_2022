@@ -26,6 +26,11 @@ fi
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
+# Install conda
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+bash Miniconda3-py39_4.12.0-Linux-x86_64.sh -b
+export PATH=~/miniconda3/bin:$PATH
+
 cd "$SCRIPT_DIR/.."
 echo | bash "setup.sh"
 
