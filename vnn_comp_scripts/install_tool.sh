@@ -16,6 +16,11 @@ if [ $(id -u) = 0 ]; then
    exit 1
 fi
 
+# Install conda
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+bash Miniconda3-py39_4.12.0-Linux-x86_64.sh -b
+export PATH=~/miniconda3/bin:$PATH
+
 if [[ ! $CONDA_DEFAULT_ENV == "prima4complete" ]]; then
   eval "$(conda shell.bash hook)"
   conda create --name prima4complete python=3.7 -y
@@ -25,11 +30,6 @@ if [[ ! $CONDA_DEFAULT_ENV == "prima4complete" ]]; then
 fi
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-
-# Install conda
-wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
-bash Miniconda3-py39_4.12.0-Linux-x86_64.sh -b
-export PATH=~/miniconda3/bin:$PATH
 
 cd "$SCRIPT_DIR/.."
 echo | bash "setup.sh"
