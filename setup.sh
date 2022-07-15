@@ -1,9 +1,10 @@
 # this script assumes that you are running on Ubuntu 18.04 and have sudo rights
 
 # install dependencies
+echo "Installing m4"
 sudo apt-get install m4
 
-  
+echo "Installing gmp"
 wget https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz
 tar -xvf gmp-6.1.2.tar.xz
 cd gmp-6.1.2
@@ -13,7 +14,7 @@ sudo make install
 cd ..
 rm gmp-6.1.2.tar.xz
 
-
+echo "Installing mpfr"
 wget https://files.sri.inf.ethz.ch/eran/mpfr/mpfr-4.1.0.tar.xz
 tar -xvf mpfr-4.1.0.tar.xz
 cd mpfr-4.1.0
@@ -23,7 +24,7 @@ sudo make install
 cd ..
 rm mpfr-4.1.0.tar.xz
 
-  
+echo "Installing cddlib"
 wget https://github.com/cddlib/cddlib/releases/download/0.94m/cddlib-0.94m.tar.gz
 tar zxf cddlib-0.94m.tar.gz
 rm cddlib-0.94m.tar.gz
@@ -38,6 +39,7 @@ cd ..
 # git clone https://gitlab.inf.ethz.ch/markmueller/prima4complete.git
 # cd prima4complete
 
+echo "Installing ELINA"
 # setup ELINA
 git clone https://github.com/eth-sri/ELINA.git
 cd ELINA
@@ -46,6 +48,7 @@ make
 sudo make install
 cd ..
 
+echo "Installing GUROBI"
 wget https://packages.gurobi.com/9.1/gurobi9.1.2_linux64.tar.gz
 tar -xvf gurobi9.1.2_linux64.tar.gz
 cd gurobi912/linux64/src/build
