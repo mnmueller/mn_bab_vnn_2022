@@ -5,34 +5,33 @@ echo "Installing m4"
 sudo apt-get install m4
 
 echo "Installing gmp"
-sudo apt-get install -y libgmp-dev
-
-#wget https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz
-#tar -xvf gmp-6.1.2.tar.xz
-#cd gmp-6.1.2
-#./configure --enable-cxx
-#make
-#sudo make install
-#cd ..
-#rm gmp-6.1.2.tar.xz
+#sudo apt-get install -y libgmp-dev
+wget https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz
+tar -xvf gmp-6.1.2.tar.xz
+cd gmp-6.1.2
+./configure --enable-cxx || 1
+make
+sudo make install
+cd ..
+rm gmp-6.1.2.tar.xz
 
 echo "Installing mpfr"
-sudo apt-get install libmpfr-dev libmpfr-doc
-#wget https://files.sri.inf.ethz.ch/eran/mpfr/mpfr-4.1.0.tar.xz
-#tar -xvf mpfr-4.1.0.tar.xz
-#cd mpfr-4.1.0
-#./configure
-#make
-#sudo make install
-#cd ..
-#rm mpfr-4.1.0.tar.xz
+#sudo apt-get install libmpfr-dev libmpfr-doc
+wget https://files.sri.inf.ethz.ch/eran/mpfr/mpfr-4.1.0.tar.xz
+tar -xvf mpfr-4.1.0.tar.xz
+cd mpfr-4.1.0
+./configure || 1
+make
+sudo make install
+cd ..
+rm mpfr-4.1.0.tar.xz
 
 echo "Installing cddlib"
 wget https://github.com/cddlib/cddlib/releases/download/0.94m/cddlib-0.94m.tar.gz
 tar zxf cddlib-0.94m.tar.gz
 rm cddlib-0.94m.tar.gz
 cd cddlib-0.94m
-./configure
+./configure || 1
 make
 sudo make install
 cd ..
@@ -46,7 +45,7 @@ echo "Installing ELINA"
 # setup ELINA
 git clone https://github.com/eth-sri/ELINA.git
 cd ELINA
-./configure -use-deeppoly -use-fconv
+./configure -use-deeppoly -use-fconv || 1
 make
 sudo make install
 cd ..
