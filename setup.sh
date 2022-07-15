@@ -17,7 +17,7 @@ sudo apt-get install -y libgmp-dev
 #rm gmp-6.1.2.tar.xz
 
 echo "Installing mpfr"
-sudo apt-get install libmpfr-dev libmpfr-doc libmpfr4 libmpfr4-dbg
+sudo apt-get install libmpfr-dev libmpfr-doc
 #wget https://files.sri.inf.ethz.ch/eran/mpfr/mpfr-4.1.0.tar.xz
 #tar -xvf mpfr-4.1.0.tar.xz
 #cd mpfr-4.1.0
