@@ -1,0 +1,126 @@
+carvana_unet_2022,onnx/unet_upsample_small.onnx,vnnlib/spec_unet_upsample_small_idx_768f299c36e1_16_eps_0.00400.vnnlib,300
+carvana_unet_2022,onnx/unet_simp_small.onnx,vnnlib/spec_unet_simp_small_idx_917f262f1608_16_eps_0.00400.vnnlib,300
+carvana_unet_2022,onnx/unet_simp_small.onnx,vnnlib/spec_unet_simp_small_idx_4dc8a7fe7c02_16_eps_0.00400.vnnlib,300
+carvana_unet_2022,onnx/unet_simp_small.onnx,vnnlib/spec_unet_simp_small_idx_68fcee2be01f_16_eps_0.01200.vnnlib,300
+carvana_unet_2022,onnx/unet_upsample_small.onnx,vnnlib/spec_unet_upsample_small_idx_768f299c36e1_16_eps_0.00400.vnnlib,300
+carvana_unet_2022,onnx/unet_upsample_small.onnx,vnnlib/spec_unet_upsample_small_idx_0cdf5b5d0ce1_16_eps_0.00400.vnnlib,300
+carvana_unet_2022,onnx/unet_upsample_small.onnx,vnnlib/spec_unet_upsample_small_idx_d8e1c401ac3c_16_eps_0.01200.vnnlib,300
+cifar_biasfield,onnx/cifar_bias_field_16.onnx,vnnlib/prop_16.vnnlib,300
+cifar_biasfield,onnx/cifar_bias_field_31.onnx,vnnlib/prop_31.vnnlib,300
+cifar_biasfield,onnx/cifar_bias_field_65.onnx,vnnlib/prop_65.vnnlib,300
+cifar_biasfield,onnx/cifar_bias_field_55.onnx,vnnlib/prop_55.vnnlib,300
+cifar_biasfield,onnx/cifar_bias_field_6.onnx,vnnlib/prop_6.vnnlib,300
+cifar100_tinyimagenet_resnet,onnx/CIFAR100_resnet_small.onnx,vnnlib/CIFAR100_resnet_small_prop_idx_8728_sidx_1716_eps_0.0039.vnnlib,240
+cifar100_tinyimagenet_resnet,onnx/CIFAR100_resnet_small.onnx,vnnlib/CIFAR100_resnet_small_prop_idx_2525_sidx_2978_eps_0.0039.vnnlib,240
+cifar100_tinyimagenet_resnet,onnx/CIFAR100_resnet_small.onnx,vnnlib/CIFAR100_resnet_small_prop_idx_8349_sidx_5927_eps_0.0039.vnnlib,240
+cifar100_tinyimagenet_resnet,onnx/CIFAR100_resnet_medium.onnx,vnnlib/CIFAR100_resnet_medium_prop_idx_1761_sidx_3933_eps_0.0039.vnnlib,200
+cifar100_tinyimagenet_resnet,onnx/CIFAR100_resnet_medium.onnx,vnnlib/CIFAR100_resnet_medium_prop_idx_972_sidx_4257_eps_0.0039.vnnlib,200
+cifar100_tinyimagenet_resnet,onnx/CIFAR100_resnet_medium.onnx,vnnlib/CIFAR100_resnet_medium_prop_idx_7029_sidx_4507_eps_0.0039.vnnlib,200
+cifar100_tinyimagenet_resnet,onnx/CIFAR100_resnet_large.onnx,vnnlib/CIFAR100_resnet_large_prop_idx_8254_sidx_7386_eps_0.0039.vnnlib,200
+cifar100_tinyimagenet_resnet,onnx/CIFAR100_resnet_large.onnx,vnnlib/CIFAR100_resnet_large_prop_idx_5454_sidx_5540_eps_0.0039.vnnlib,200
+cifar100_tinyimagenet_resnet,onnx/CIFAR100_resnet_large.onnx,vnnlib/CIFAR100_resnet_large_prop_idx_6169_sidx_2746_eps_0.0039.vnnlib,200
+cifar100_tinyimagenet_resnet,onnx/CIFAR100_resnet_super.onnx,vnnlib/CIFAR100_resnet_super_prop_idx_9054_sidx_4067_eps_0.0039.vnnlib,300
+cifar100_tinyimagenet_resnet,onnx/CIFAR100_resnet_super.onnx,vnnlib/CIFAR100_resnet_super_prop_idx_607_sidx_9649_eps_0.0039.vnnlib,300
+cifar100_tinyimagenet_resnet,onnx/CIFAR100_resnet_super.onnx,vnnlib/CIFAR100_resnet_super_prop_idx_4784_sidx_1312_eps_0.0039.vnnlib,300
+cifar100_tinyimagenet_resnet,onnx/TinyImageNet_resnet_medium.onnx,vnnlib/TinyImageNet_resnet_medium_prop_idx_5814_sidx_2749_eps_0.0039.vnnlib,200
+cifar100_tinyimagenet_resnet,onnx/TinyImageNet_resnet_medium.onnx,vnnlib/TinyImageNet_resnet_medium_prop_idx_704_sidx_82_eps_0.0039.vnnlib,200
+cifar100_tinyimagenet_resnet,onnx/TinyImageNet_resnet_medium.onnx,vnnlib/TinyImageNet_resnet_medium_prop_idx_8651_sidx_6574_eps_0.0039.vnnlib,200
+collins_rul_cnn,onnx/NN_rul_small_window_20.onnx,vnnlib/robustness_2perturbations_delta10_epsilon10_w20.vnnlib,30
+collins_rul_cnn,onnx/NN_rul_small_window_20.onnx,vnnlib/robustness_2perturbations_delta20_epsilon10_w20.vnnlib,60
+collins_rul_cnn,onnx/NN_rul_small_window_20.onnx,vnnlib/robustness_8perturbations_delta10_epsilon10_w20.vnnlib,120
+collins_rul_cnn,onnx/NN_rul_small_window_20.onnx,vnnlib/robustness_8perturbations_delta20_epsilon10_w20.vnnlib,300
+collins_rul_cnn,onnx/NN_rul_small_window_20.onnx,vnnlib/monotonicity_CI_shift5_w20.vnnlib,30
+collins_rul_cnn,onnx/NN_rul_small_window_20.onnx,vnnlib/monotonicity_CI_shift10_w20.vnnlib,120
+collins_rul_cnn,onnx/NN_rul_small_window_20.onnx,vnnlib/monotonicity_CI_shift20_w20.vnnlib,300
+collins_rul_cnn,onnx/NN_rul_small_window_20.onnx,vnnlib/if_then_5levels_w20.vnnlib,1800
+collins_rul_cnn,onnx/NN_rul_full_window_20.onnx,vnnlib/robustness_16perturbations_delta10_epsilon10_w20.vnnlib,300
+collins_rul_cnn,onnx/NN_rul_full_window_20.onnx,vnnlib/robustness_16perturbations_delta20_epsilon10_w20.vnnlib,300
+collins_rul_cnn,onnx/NN_rul_full_window_20.onnx,vnnlib/robustness_16perturbations_delta40_epsilon10_w20.vnnlib,300
+collins_rul_cnn,onnx/NN_rul_full_window_20.onnx,vnnlib/monotonicity_CI_shift5_w20.vnnlib,60
+collins_rul_cnn,onnx/NN_rul_full_window_20.onnx,vnnlib/monotonicity_CI_shift10_w20.vnnlib,180
+collins_rul_cnn,onnx/NN_rul_full_window_20.onnx,vnnlib/monotonicity_CI_shift20_w20.vnnlib,360
+collins_rul_cnn,onnx/NN_rul_full_window_20.onnx,vnnlib/if_then_7levels_w20.vnnlib,1800
+collins_rul_cnn,onnx/NN_rul_full_window_40.onnx,vnnlib/robustness_16perturbations_delta10_epsilon10_w40.vnnlib,300
+collins_rul_cnn,onnx/NN_rul_full_window_40.onnx,vnnlib/robustness_16perturbations_delta20_epsilon10_w40.vnnlib,600
+collins_rul_cnn,onnx/NN_rul_full_window_40.onnx,vnnlib/robustness_16perturbations_delta40_epsilon10_w40.vnnlib,1200
+collins_rul_cnn,onnx/NN_rul_full_window_40.onnx,vnnlib/monotonicity_CI_shift5_w40.vnnlib,120
+collins_rul_cnn,onnx/NN_rul_full_window_40.onnx,vnnlib/monotonicity_CI_shift10_w40.vnnlib,300
+mnist_fc,onnx/mnist-net_256x2.onnx,vnnlib/prop_13_0.03.vnnlib,120
+mnist_fc,onnx/mnist-net_256x2.onnx,vnnlib/prop_14_0.03.vnnlib,120
+mnist_fc,onnx/mnist-net_256x2.onnx,vnnlib/prop_0_0.05.vnnlib,120
+mnist_fc,onnx/mnist-net_256x2.onnx,vnnlib/prop_1_0.05.vnnlib,120
+mnist_fc,onnx/mnist-net_256x2.onnx,vnnlib/prop_2_0.05.vnnlib,120
+mnist_fc,onnx/mnist-net_256x4.onnx,vnnlib/prop_13_0.03.vnnlib,300
+mnist_fc,onnx/mnist-net_256x4.onnx,vnnlib/prop_14_0.03.vnnlib,300
+mnist_fc,onnx/mnist-net_256x4.onnx,vnnlib/prop_0_0.05.vnnlib,300
+mnist_fc,onnx/mnist-net_256x4.onnx,vnnlib/prop_1_0.05.vnnlib,300
+mnist_fc,onnx/mnist-net_256x6.onnx,vnnlib/prop_13_0.03.vnnlib,300
+mnist_fc,onnx/mnist-net_256x6.onnx,vnnlib/prop_14_0.03.vnnlib,300
+mnist_fc,onnx/mnist-net_256x6.onnx,vnnlib/prop_0_0.05.vnnlib,300
+mnist_fc,onnx/mnist-net_256x6.onnx,vnnlib/prop_1_0.05.vnnlib,300
+mnist_fc,onnx/mnist-net_256x6.onnx,vnnlib/prop_2_0.05.vnnlib,300
+nn4sys,onnx/lindex.onnx,vnnlib/lindex_1.vnnlib,30
+nn4sys,onnx/lindex.onnx,vnnlib/lindex_200.vnnlib,30
+nn4sys,onnx/lindex.onnx,vnnlib/lindex_600.vnnlib,30
+nn4sys,onnx/lindex.onnx,vnnlib/lindex_400.vnnlib,30
+nn4sys,onnx/lindex_deep.onnx,vnnlib/lindex_400.vnnlib,30
+nn4sys,onnx/lindex_deep.onnx,vnnlib/lindex_200.vnnlib,30
+nn4sys,onnx/lindex_deep.onnx,vnnlib/lindex_1.vnnlib,30
+nn4sys,onnx/lindex_deep.onnx,vnnlib/lindex_600.vnnlib,30
+nn4sys,onnx/mscn_128d.onnx,vnnlib/cardinality_0_600_128.vnnlib,20
+nn4sys,onnx/mscn_128d.onnx,vnnlib/cardinality_0_700_128.vnnlib,20
+nn4sys,onnx/mscn_128d.onnx,vnnlib/cardinality_0_800_128.vnnlib,20
+nn4sys,onnx/mscn_128d_dual.onnx,vnnlib/cardinality_1_540_128_dual.vnnlib,40
+nn4sys,onnx/mscn_128d_dual.onnx,vnnlib/cardinality_1_600_128_dual.vnnlib,40
+nn4sys,onnx/mscn_128d_dual.onnx,vnnlib/cardinality_1_660_128_dual.vnnlib,40
+nn4sys,onnx/mscn_2048d.onnx,vnnlib/cardinality_0_500_2048.vnnlib,20
+nn4sys,onnx/mscn_2048d.onnx,vnnlib/cardinality_0_600_2048.vnnlib,20
+nn4sys,onnx/mscn_2048d.onnx,vnnlib/cardinality_0_700_2048.vnnlib,40
+nn4sys,onnx/mscn_2048d_dual.onnx,vnnlib/cardinality_1_360_2048_dual.vnnlib,160
+nn4sys,onnx/mscn_2048d_dual.onnx,vnnlib/cardinality_1_420_2048_dual.vnnlib,180
+nn4sys,onnx/mscn_2048d_dual.onnx,vnnlib/cardinality_1_480_2048_dual.vnnlib,180
+oval21,onnx/cifar_base_kw.onnx,vnnlib/cifar_base_kw-img5651-eps0.008496732026143792.vnnlib,720
+oval21,onnx/cifar_base_kw.onnx,vnnlib/cifar_base_kw-img5484-eps0.01947712418300654.vnnlib,720
+oval21,onnx/cifar_base_kw.onnx,vnnlib/cifar_base_kw-img3643-eps0.024705882352941175.vnnlib,720
+oval21,onnx/cifar_wide_kw.onnx,vnnlib/cifar_wide_kw-img9060-eps0.009150326797385623.vnnlib,720
+oval21,onnx/cifar_wide_kw.onnx,vnnlib/cifar_wide_kw-img62-eps0.005098039215686275.vnnlib,720
+oval21,onnx/cifar_wide_kw.onnx,vnnlib/cifar_wide_kw-img6409-eps0.026666666666666665.vnnlib,720
+oval21,onnx/cifar_deep_kw.onnx,vnnlib/cifar_deep_kw-img8068-eps0.013464052287581699.vnnlib,720
+oval21,onnx/cifar_deep_kw.onnx,vnnlib/cifar_deep_kw-img8472-eps0.011241830065359478.vnnlib,720
+oval21,onnx/cifar_deep_kw.onnx,vnnlib/cifar_deep_kw-img7977-eps0.03738562091503268.vnnlib,720
+reach_prob_density,onnx/vdp.onnx,vnnlib/vdp_3.vnnlib,600
+reach_prob_density,onnx/vdp.onnx,vnnlib/vdp_4.vnnlib,600
+reach_prob_density,onnx/vdp.onnx,vnnlib/vdp_5.vnnlib,600
+reach_prob_density,onnx/robot.onnx,vnnlib/robot_5.vnnlib,600
+reach_prob_density,onnx/robot.onnx,vnnlib/robot_6.vnnlib,600
+reach_prob_density,onnx/robot.onnx,vnnlib/robot_7.vnnlib,600
+reach_prob_density,onnx/robot.onnx,vnnlib/robot_10.vnnlib,600
+reach_prob_density,onnx/gcas.onnx,vnnlib/gcas_0.vnnlib,600
+reach_prob_density,onnx/gcas.onnx,vnnlib/gcas_1.vnnlib,600
+reach_prob_density,onnx/gcas.onnx,vnnlib/gcas_2.vnnlib,600
+rl_benchmarks,onnx/cartpole.onnx,vnnlib/cartpole_case_unsafe_7.vnnlib,30
+rl_benchmarks,onnx/cartpole.onnx,vnnlib/cartpole_case_unsafe_8.vnnlib,30
+rl_benchmarks,onnx/cartpole.onnx,vnnlib/cartpole_case_safe_9.vnnlib,30
+rl_benchmarks,onnx/lunarlander.onnx,vnnlib/lunarlander_case_safe_2.vnnlib,47
+rl_benchmarks,onnx/lunarlander.onnx,vnnlib/lunarlander_case_unsafe_3.vnnlib,98
+rl_benchmarks,onnx/lunarlander.onnx,vnnlib/lunarlander_case_unsafe_4.vnnlib,31
+rl_benchmarks,onnx/dubinsrejoin.onnx,vnnlib/dubinsrejoin_case_safe_0.vnnlib,3755
+rl_benchmarks,onnx/dubinsrejoin.onnx,vnnlib/dubinsrejoin_case_safe_1.vnnlib,2394
+rl_benchmarks,onnx/dubinsrejoin.onnx,vnnlib/dubinsrejoin_case_unsafe_2.vnnlib,209
+rl_benchmarks,onnx/dubinsrejoin.onnx,vnnlib/dubinsrejoin_case_safe_3.vnnlib,1034
+sri_resnet_a,onnx/resnet_3b2_bn_mixup_adv_4.0_bs128_lr-1.onnx,vnnlib/cifar10_spec_idx_6426_eps_0.00350.vnnlib, 300.0
+sri_resnet_a,onnx/resnet_3b2_bn_mixup_adv_4.0_bs128_lr-1.onnx,vnnlib/cifar10_spec_idx_1520_eps_0.00350.vnnlib, 300.0
+sri_resnet_a,onnx/resnet_3b2_bn_mixup_adv_4.0_bs128_lr-1.onnx,vnnlib/cifar10_spec_idx_9887_eps_0.00350.vnnlib, 300.0
+sri_resnet_a,onnx/resnet_3b2_bn_mixup_adv_4.0_bs128_lr-1.onnx,vnnlib/cifar10_spec_idx_1958_eps_0.00350.vnnlib, 300.0
+sri_resnet_a,onnx/resnet_3b2_bn_mixup_adv_4.0_bs128_lr-1.onnx,vnnlib/cifar10_spec_idx_859_eps_0.00350.vnnlib, 300.0
+sri_resnet_b,onnx/resnet_3b2_bn_mixup_ssadv_4.0_bs128_lr-1_v2.onnx,vnnlib/cifar10_spec_idx_574_eps_0.00350.vnnlib, 300.0
+sri_resnet_b,onnx/resnet_3b2_bn_mixup_ssadv_4.0_bs128_lr-1_v2.onnx,vnnlib/cifar10_spec_idx_6426_eps_0.00350.vnnlib, 300.0
+sri_resnet_b,onnx/resnet_3b2_bn_mixup_ssadv_4.0_bs128_lr-1_v2.onnx,vnnlib/cifar10_spec_idx_1520_eps_0.00350.vnnlib, 300.0
+sri_resnet_b,onnx/resnet_3b2_bn_mixup_ssadv_4.0_bs128_lr-1_v2.onnx,vnnlib/cifar10_spec_idx_9887_eps_0.00350.vnnlib, 300.0
+sri_resnet_b,onnx/resnet_3b2_bn_mixup_ssadv_4.0_bs128_lr-1_v2.onnx,vnnlib/cifar10_spec_idx_1958_eps_0.00350.vnnlib, 300.0
+sri_resnet_b,onnx/resnet_3b2_bn_mixup_ssadv_4.0_bs128_lr-1_v2.onnx,vnnlib/cifar10_spec_idx_859_eps_0.00350.vnnlib, 300.0
+tllverifybench,onnx/tllBench_n=2_N=M=8_m=1_instance_0_0.onnx,vnnlib/property_N=8_0.vnnlib,600
+tllverifybench,onnx/tllBench_n=2_N=M=8_m=1_instance_0_1.onnx,vnnlib/property_N=8_1.vnnlib,600
+tllverifybench,onnx/tllBench_n=2_N=M=48_m=1_instance_5_2.onnx,vnnlib/property_N=48_2.vnnlib,600
+tllverifybench,onnx/tllBench_n=2_N=M=48_m=1_instance_5_3.onnx,vnnlib/property_N=48_3.vnnlib,600
+tllverifybench,onnx/tllBench_n=2_N=M=56_m=1_instance_6_0.onnx,vnnlib/property_N=56_0.vnnlib,600

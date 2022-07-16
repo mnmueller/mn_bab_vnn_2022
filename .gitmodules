@@ -1,0 +1,9 @@
+[submodule "onnx2pytorch"]
+	path = onnx2pytorch
+	url = https://github.com/mnmueller/onnx2pytorch_vnn.git
+[submodule "vnn-comp-2022-sup"]
+	path = vnn-comp-2022-sup
+	url = ../../OU-VECHEV/vnn-comp-2022-sup.git
+[submodule "dnnv"]
+	path = dnnv
+	url = https://github.com/mnmueller/dnnv_vnn.git
