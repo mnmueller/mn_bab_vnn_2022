@@ -155,7 +155,7 @@ def get_net_asnet_conf(
     node_count = get_network_characteristics(as_net)
     benchmark_meta_config = meta_config.get_benchmark_mapping(benchmark_id)
     config_obj = benchmark_meta_config.get_config_given_characteristics(node_count)
-    config_path = config_obj["config"]
+    config_path = os.path.realpath(os.path.join(FILE_DIR, "../..", config_obj["config"]))
     print(f"== Using config {config_path} ==")
 
     json_config = get_config_from_json(config_path)
@@ -182,7 +182,7 @@ def get_net_asnet_conf(
         assert inp_name is not None
         # export current model to onnx for dtype
         try:
-            temp_dir = "temp_convert"
+            temp_dir = os.path.realpath(os.path.join(FILE_DIR, "../..""temp_convert"))
             net_pref = "simplify"
             onnx_path = f"{temp_dir}/{net_pref}.onnx"
             Path(temp_dir).mkdir(parents=True, exist_ok=True)
@@ -220,7 +220,7 @@ def create_instance_from_vnn_spec(
 ) -> None:
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-
+    net_path = os.path.realpath(os.path.join(FILE_DIR,"../..",net_path))
     net, as_network, config_path, json_config, parsed_config = get_net_asnet_conf(
         benchmark_name, net_path, device
     )
