@@ -18,6 +18,7 @@ VNNLIB_FILE=$4
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 prepare_file="$SCRIPT_DIR/../src/utilities/prepare_instance.py"
 export PYTHONPATH=$PYTHONPATH:$SCRIPT_DIR/../
+export PYTHONPATH=$PYTHONPATH:$SCRIPT_DIR/../ELINA/python_interface
 
 export PATH=~/miniconda3/bin:$PATH
 

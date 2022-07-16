@@ -66,3 +66,5 @@ export GUROBI_HOME="$(pwd)/gurobi912/linux64"
 export PATH="${PATH}:/usr/lib:${GUROBI_HOME}/bin"
 export CPATH="${CPATH}:${GUROBI_HOME}/include"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib:${GUROBI_HOME}/lib
+
+echo $(ls)
