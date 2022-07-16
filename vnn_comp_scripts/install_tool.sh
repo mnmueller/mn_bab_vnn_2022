@@ -53,6 +53,8 @@ fi
 # add current directory to pythonpath
 export PYTHONPATH=$PYTHONPATH:$PWD
 
+git submodule update --init --recursive
+
 cd $SCRIPT_DIR
 
 echo | chmod 777 gurobi_install.sh
