@@ -19,6 +19,8 @@ TIMEOUT=$6
 
 export PATH=~/miniconda3/bin:$PATH
 if [[ ! $CONDA_DEFAULT_ENV == "prima4complete" ]]; then
+  eval "$(conda shell.bash hook)"
+  conda init bash
   conda activate prima4complete
   echo "created conda environment $CONDA_DEFAULT_ENV"
 fi
