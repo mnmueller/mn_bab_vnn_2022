@@ -17,13 +17,15 @@ VNNLIB_FILE=$4
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 prepare_file="$SCRIPT_DIR/../src/utilities/prepare_instance.py"
+export PYTHONPATH=$PYTHONPATH:$SCRIPT_DIR/../
+
 export PATH=~/miniconda3/bin:$PATH
 
 if [[ ! $CONDA_DEFAULT_ENV == "prima4complete" ]]; then
   eval "$(conda shell.bash hook)"
   conda init bash
   conda activate prima4complete
-  echo "created conda environment $CONDA_DEFAULT_ENV"
+  echo "activated conda environment $CONDA_DEFAULT_ENV"
 fi
 
 echo "\n Preparing $TOOL_NAME for benchmark instance in category '$CATEGORY' with onnx file '$ONNX_FILE' and vnnlib file '$VNNLIB_FILE'"

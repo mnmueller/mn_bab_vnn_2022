@@ -22,11 +22,14 @@ if [[ ! $CONDA_DEFAULT_ENV == "prima4complete" ]]; then
   eval "$(conda shell.bash hook)"
   conda init bash
   conda activate prima4complete
-  echo "created conda environment $CONDA_DEFAULT_ENV"
+  echo "activated conda environment $CONDA_DEFAULT_ENV"
 fi
+
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 run_file="$SCRIPT_DIR/../src/run_instance.py"
+export PYTHONPATH=$PYTHONPATH:$SCRIPT_DIR/../
+
 
 echo "Running $TOOL_NAME for benchmark instance in category '$CATEGORY' with onnx file '$ONNX_FILE' and vnnlib file '$VNNLIB_FILE' and timeout '$TIMEOUT'. Writing to '$RESULTS_FILE'"
 
