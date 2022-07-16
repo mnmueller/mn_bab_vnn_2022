@@ -17,6 +17,10 @@ VNNLIB_FILE=$4
 RESULTS_FILE=$5
 TIMEOUT=$6
 
+if [[ ! $CONDA_DEFAULT_ENV == "prima4complete" ]]; then
+  conda activate prima4complete
+  echo "created conda environment $CONDA_DEFAULT_ENV"
+fi
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 run_file="$SCRIPT_DIR/../src/run_instance.py"
