@@ -17,6 +17,7 @@ VNNLIB_FILE=$4
 RESULTS_FILE=$5
 TIMEOUT=$6
 
+export PATH=~/miniconda3/bin:$PATH
 if [[ ! $CONDA_DEFAULT_ENV == "prima4complete" ]]; then
   conda activate prima4complete
   echo "created conda environment $CONDA_DEFAULT_ENV"

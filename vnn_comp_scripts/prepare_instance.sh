@@ -17,6 +17,7 @@ VNNLIB_FILE=$4
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 prepare_file="$SCRIPT_DIR/../src/utilities/prepare_instance.py"
+export PATH=~/miniconda3/bin:$PATH
 
 if [[ ! $CONDA_DEFAULT_ENV == "prima4complete" ]]; then
   conda activate prima4complete
