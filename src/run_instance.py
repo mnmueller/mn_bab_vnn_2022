@@ -1,4 +1,5 @@
 import argparse
+import os.path
 import time
 from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Tuple
@@ -26,7 +27,8 @@ from src.verification_instance import (
     get_unet_gt_constraint,
 )
 
-TEMP_RUN_DIR = "run"
+FILE_DIR = os.path.realpath(os.path.dirname(__file__))
+TEMP_RUN_DIR = os.path.realpath(os.path.join(FILE_DIR, "..", "run"))
 
 
 def generate_constraints(
