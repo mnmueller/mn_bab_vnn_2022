@@ -29,9 +29,9 @@ from src.utilities.loading.vnn_spec_loader import (  # translate_constraints_to_
 
 FILE_DIR = os.path.realpath(os.path.dirname(__file__))
 
-NET_TO_CONFIG_MAP = os.path.realpath(os.path.join(FILE_DIR, "..","configs/net_to_config.csv"))
-META_CONFIG = os.path.realpath(os.path.join(FILE_DIR, "..","configs/meta_config.json"))
-TEMP_RUN_DIR = os.path.realpath(os.path.join(FILE_DIR, "..", "run"))
+NET_TO_CONFIG_MAP = os.path.realpath(os.path.join(FILE_DIR, "../..","configs/net_to_config.csv"))
+META_CONFIG = os.path.realpath(os.path.join(FILE_DIR, "../..","configs/meta_config.json"))
+TEMP_RUN_DIR = os.path.realpath(os.path.join(FILE_DIR, "../..", "run"))
 
 def generate_constraints(
     class_num: int, y: int
