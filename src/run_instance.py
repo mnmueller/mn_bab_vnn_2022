@@ -170,6 +170,7 @@ def run_instance(
     verifier = MNBaBVerifier(network, device, parsed_config.verifier)
 
     start_time = time.time()
+    adv_example = None
 
     if parsed_config.verifier.outer.instance_pre_filter_batch_size is not None:
         assert (
