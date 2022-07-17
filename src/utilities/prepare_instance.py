@@ -220,12 +220,12 @@ def create_instance_from_vnn_spec(
 ) -> None:
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    net_path = os.path.realpath(os.path.join(FILE_DIR, "../../..", net_path))
+    net_path = os.path.realpath(os.path.join(FILE_DIR, "../../..", "vnncomp2022_benchmarks", net_path))
     net, as_network, config_path, json_config, parsed_config = get_net_asnet_conf(
         benchmark_name, net_path, device
     )
     # Get data
-    spec_path = os.path.realpath(os.path.join(FILE_DIR, "../../..", spec_path))
+    spec_path = os.path.realpath(os.path.join(FILE_DIR, "../../..", "vnncomp2022_benchmarks",spec_path))
     (inputs, input_regions, target_g_t_constraints) = get_io_constraints_from_spec(
         spec_path=spec_path, config=parsed_config, device=device
     )
