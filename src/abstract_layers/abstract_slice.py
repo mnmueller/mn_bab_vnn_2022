@@ -103,7 +103,7 @@ class Slice(concreteSlice, AbstractModule):
             assert False, "Not implemented - Slice with dependence sets"
         assert isinstance(affine_form.coef, Tensor)
 
-        bs, num_queries, _, _ = affine_form.coef.shape
+        bs, num_queries = affine_form.coef.shape[:2]
         new_coef_shape = (bs, num_queries, *self.input_dim)
 
         slice_indices = [

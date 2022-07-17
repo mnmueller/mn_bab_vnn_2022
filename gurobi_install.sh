@@ -20,10 +20,12 @@ function checkOpenconnect(){
     echo $?
 }
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 echo | apt-get install openconnect
 startOpenConnect
 sleep 5
 OPENCONNECT_STATUS=$(checkOpenconnect)
 echo $OPENCONNECT_STATUS
-echo | sudo -u ${GUROBI_USER} ../gurobi912/linux64/bin/grbgetkey ${KEY}
+echo | sudo -u ${GUROBI_USER} $SCRIPT_DIR/gurobi912/linux64/bin/grbgetkey ${KEY}
 sudo killall -SIGINT openconnect
