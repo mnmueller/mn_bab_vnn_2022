@@ -6,8 +6,8 @@
     224
   ],
   "outer_verifier": {
-    "forward_dp_pass": true,
-    "initial_dp": true,
+    "forward_dp_pass": false,
+    "initial_dp": false,
     "adversarial_attack": false,
     "adversarial_attack_restarts": 5,
     "milp": {
@@ -23,7 +23,7 @@
   "eps": 0,
   "use_gpu": true,
   "optimize_alpha": true,
-  "dtype": "float32",
+  "dtype": "float64",
   "alpha_lr": 0.1,
   "alpha_opt_iterations": 20,
   "optimize_prima": false,
