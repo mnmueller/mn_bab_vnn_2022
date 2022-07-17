@@ -567,6 +567,9 @@ def load_onnx_from_proto(
         ][0]
         pytorch_structured = pytorch_structured[: softmax_idx - 1]
         pytorch_structured.append(nn.Flatten())
+    elif path is not None and "vgg16-7" in path:
+        onnx_shape = (3, 224, 224)
+        pytorch_structured = pytorch_model.forward_trace_to_graph()
     else:
         pytorch_structured = pytorch_model.forward_trace_to_graph()
 
