@@ -276,39 +276,41 @@ def split_input_regions(
 def consolidate_input_regions(
     input_regions: List[Tuple[Tensor, Tensor]]
 ) -> Tuple[Tensor, Tensor]:
-    input_lb = list_minimum([x[0] for x in input_regions])
-    input_ub = list_maximum([x[1] for x in input_regions])
+    input_lb = torch.stack([x[0] for x in input_regions], 0).min(0)[0]
+    input_ub = torch.stack([x[1] for x in input_regions], 0).max(0)[0]
     return input_lb, input_ub
 
 
-def list_minimum(inputs: List[Tensor]) -> Tensor:
-    if len(inputs) == 1:
-        return inputs[0]
-    if len(inputs) == 2:
-        return torch.minimum(inputs[0], inputs[1])
-    else:
-        return list_minimum(
-            [
-                torch.minimum(inputs[2 * i], inputs[2 * i + 1])
-                for i in range(len(inputs) // 2)
-            ]
-            + ([] if len(inputs) % 2 == 0 else [inputs[-1]])
-        )
+# def list_minimum(inputs: List[Tensor]) -> Tensor:
+#     if len(inputs) == 0:
+#         assert False, "List Minimum undefined for empty lists"
+#     elif len(inputs) == 1:
+#         return inputs[0]
+#     elif len(inputs) == 2:
+#         return torch.minimum(inputs[0], inputs[1])
+#     else:
+#         return list_minimum(
+#             [
+#                 torch.minimum(inputs[2 * i], inputs[2 * i + 1])
+#                 for i in range(len(inputs) // 2)
+#             ]
+#             + ([] if len(inputs) % 2 == 0 else [inputs[-1]])
+#         )
 
 
-def list_maximum(inputs: List[Tensor]) -> Tensor:
-    if len(inputs) == 1:
-        return inputs[0]
-    if len(inputs) == 2:
-        return torch.maximum(inputs[0], inputs[1])
-    else:
-        return list_maximum(
-            [
-                torch.maximum(inputs[2 * i], inputs[2 * i + 1])
-                for i in range(len(inputs) // 2)
-            ]
-            + ([] if len(inputs) % 2 == 0 else [inputs[-1]])
-        )
+# def list_maximum(inputs: List[Tensor]) -> Tensor:
+#     if len(inputs) == 1:
+#         return inputs[0]
+#     if len(inputs) == 2:
+#         return torch.maximum(inputs[0], inputs[1])
+#     else:
+#         return list_maximum(
+#             [
+#                 torch.maximum(inputs[2 * i], inputs[2 * i + 1])
+#                 for i in range(len(inputs) // 2)
+#             ]
+#             + ([] if len(inputs) % 2 == 0 else [inputs[-1]])
+#         )
 
 
 def tensor_reduce(
