@@ -501,8 +501,7 @@ class MNBaBVerifier:
                         dim=split_dim,
                         splits=domain_splitting.split_factor,
                     )
-                    queue += [
-                        (
+                    queue = [(
                             input_region[0],
                             input_region[1],
                             (
@@ -514,7 +513,7 @@ class MNBaBVerifier:
                             properties_to_verify_batch[batch_idx],
                         )
                         for input_region in new_input_regions
-                    ]
+                    ] + queue
 
         print(f"A total of {total_regions_considered} regions considered.")
         return list(out_queue), query_lb_global
