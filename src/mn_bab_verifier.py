@@ -1050,7 +1050,7 @@ class MNBaBVerifier:
             )
             if len(queue) == 0:
                 return (True, None, None, 0, 0)
-            elif len(queue) == 1 and queue[0][-1] == -1:
+            elif len(queue) == 1 and queue[0][-2] == -1:
                 # counterexample region returned
                 adv_example = queue[0][0]
                 out = self.network(adv_example)
