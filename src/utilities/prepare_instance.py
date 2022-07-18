@@ -29,9 +29,14 @@ from src.utilities.loading.vnn_spec_loader import (  # translate_constraints_to_
 
 FILE_DIR = os.path.realpath(os.path.dirname(__file__))
 
-NET_TO_CONFIG_MAP = os.path.realpath(os.path.join(FILE_DIR, "../..", "configs/net_to_config.csv"))
-META_CONFIG = os.path.realpath(os.path.join(FILE_DIR, "../..", "configs/meta_config.json"))
+NET_TO_CONFIG_MAP = os.path.realpath(
+    os.path.join(FILE_DIR, "../..", "configs/net_to_config.csv")
+)
+META_CONFIG = os.path.realpath(
+    os.path.join(FILE_DIR, "../..", "configs/meta_config.json")
+)
 TEMP_RUN_DIR = os.path.realpath(os.path.join(FILE_DIR, "../..", "run"))
+
 
 def generate_constraints(
     class_num: int, y: int
@@ -158,7 +163,9 @@ def get_net_asnet_conf(
     node_count = get_network_characteristics(as_net)
     benchmark_meta_config = meta_config.get_benchmark_mapping(benchmark_id)
     config_obj = benchmark_meta_config.get_config_given_characteristics(node_count)
-    config_path = os.path.realpath(os.path.join(FILE_DIR, "../..", config_obj["config"]))
+    config_path = os.path.realpath(
+        os.path.join(FILE_DIR, "../..", config_obj["config"])
+    )
     print(f"== Using config {config_path} ==")
 
     json_config = get_config_from_json(config_path)
@@ -185,7 +192,7 @@ def get_net_asnet_conf(
         assert inp_name is not None
         # export current model to onnx for dtype
         try:
-            temp_dir = os.path.realpath(os.path.join(FILE_DIR, "../..""temp_convert"))
+            temp_dir = os.path.realpath(os.path.join(FILE_DIR, "../.." "temp_convert"))
             net_pref = "simplify"
             onnx_path = f"{temp_dir}/{net_pref}.onnx"
             Path(temp_dir).mkdir(parents=True, exist_ok=True)
@@ -224,8 +231,12 @@ def create_instance_from_vnn_spec(
 
     shutil.rmtree(f"{TEMP_RUN_DIR}", ignore_errors=True)
 
-    net_path = os.path.realpath(os.path.join(FILE_DIR, "../../..", "vnncomp2022_benchmarks", net_path))
-    spec_path = os.path.realpath(os.path.join(FILE_DIR, "../../..", "vnncomp2022_benchmarks",spec_path))
+    net_path = os.path.realpath(
+        os.path.join(FILE_DIR, "../../..", "vnncomp2022_benchmarks", net_path)
+    )
+    spec_path = os.path.realpath(
+        os.path.join(FILE_DIR, "../../..", "vnncomp2022_benchmarks", spec_path)
+    )
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     net, as_network, config_path, json_config, parsed_config = get_net_asnet_conf(

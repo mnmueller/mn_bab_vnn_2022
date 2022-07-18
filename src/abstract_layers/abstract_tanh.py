@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+import os
 from typing import Any, Callable, Optional, Tuple
 
-import os
 import torch
 import torch.nn as nn
 from torch import Tensor
@@ -22,7 +22,9 @@ def tanh(x: Tensor) -> Tensor:
 def d_tanh(x: Tensor) -> Tensor:
     return 1 - torch.tanh(x) * torch.tanh(x)
 
+
 FILE_DIR = os.path.realpath(os.path.dirname(__file__))
+
 
 class Tanh(SigBase, AbstractModule):
 
@@ -43,7 +45,9 @@ class Tanh(SigBase, AbstractModule):
             ) = SigBase._compute_bound_to_tangent_point(tanh, d_tanh)
         if Tanh.sp_interpolator is None:
             Tanh.sp_interpolator = BilinearInterpol.load_from_path(
-                                os.path.realpath(os.path.join(FILE_DIR,"../../data/tanh_bil_interpol.pkl"))
+                os.path.realpath(
+                    os.path.join(FILE_DIR, "../../data/tanh_bil_interpol.pkl")
+                )
             )
         self.output_dim = dim
         self.dependence_set_block = False

@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+import os
 from typing import Any, Callable, Optional, Tuple
 
-import os
 import torch
 import torch.nn as nn
 from torch import Tensor
@@ -24,7 +24,9 @@ def d_sig(x: Tensor) -> Tensor:
     sig = torch.sigmoid(x)
     return sig * (1 - sig)
 
+
 FILE_DIR = os.path.realpath(os.path.dirname(__file__))
+
 
 class Sigmoid(SigBase, AbstractModule):
 
@@ -45,7 +47,9 @@ class Sigmoid(SigBase, AbstractModule):
             ) = SigBase._compute_bound_to_tangent_point(sig, d_sig)
         if Sigmoid.sp_interpolator is None:
             Sigmoid.sp_interpolator = BilinearInterpol.load_from_path(
-                os.path.realpath(os.path.join(FILE_DIR,"../../data/sig_bil_interpol.pkl"))
+                os.path.realpath(
+                    os.path.join(FILE_DIR, "../../data/sig_bil_interpol.pkl")
+                )
             )
         self.output_dim = dim
         self.dependence_set_block = False

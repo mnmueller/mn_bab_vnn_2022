@@ -109,9 +109,15 @@ def run_instance(
     benchmark: str, net_path: str, spec_path: str, res_path: str, timeout: int
 ) -> None:
 
-    net_path = os.path.realpath(os.path.join(FILE_DIR, "../..", "vnncomp2022_benchmarks", net_path))
-    spec_path = os.path.realpath(os.path.join(FILE_DIR, "../..", "vnncomp2022_benchmarks", spec_path))
-    res_path = os.path.realpath(os.path.join(FILE_DIR, "../..", "vnncomp2022_benchmarks", res_path))
+    net_path = os.path.realpath(
+        os.path.join(FILE_DIR, "../..", "vnncomp2022_benchmarks", net_path)
+    )
+    spec_path = os.path.realpath(
+        os.path.join(FILE_DIR, "../..", "vnncomp2022_benchmarks", spec_path)
+    )
+    res_path = os.path.realpath(
+        os.path.join(FILE_DIR, "../..", "vnncomp2022_benchmarks", res_path)
+    )
 
     shutil.rmtree(f"{res_path}", ignore_errors=True)
 

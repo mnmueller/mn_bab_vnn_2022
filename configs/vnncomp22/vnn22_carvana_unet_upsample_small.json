@@ -25,14 +25,14 @@
   "dtype": "float32",
   "alpha_lr": 0.15,
   "alpha_opt_iterations": 15,
-    "parameter_sharing": {
+  "parameter_sharing": {
     "fully_connected": "none",
     "conv2d": "in_channel"
   },
   "parameter_sharing_layer_id_filter": "layer_ids[:0]",
   "bab_alpha_opt_iterations": 7,
   "optimize_prima": false,
-  "prima_lr": 0.010,
+  "prima_lr": 0.01,
   "prima_opt_iterations": 20,
   "prima_hyperparameters": {
     "sparse_n": 50,

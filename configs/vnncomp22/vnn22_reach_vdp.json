@@ -64,7 +64,7 @@
       1,
       2
     ],
-    "max_depth": 100,
+    "max_depth": 5,
     "domain": "DPF",
     "batch_size": 5000,
     "split_factor": 2

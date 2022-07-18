@@ -25,7 +25,7 @@
   "dtype": "float32",
   "alpha_lr": 0.15,
   "alpha_opt_iterations": 15,
-    "parameter_sharing": {
+  "parameter_sharing": {
     "fully_connected": "none",
     "conv2d": "in_channel"
   },
