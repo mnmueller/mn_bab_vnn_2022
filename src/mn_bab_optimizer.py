@@ -198,6 +198,10 @@ class MNBabOptimizer:
                 f"Unstable neurons post alpha: {sum([(x == 0).sum().item() for x in root_subproblem_state.constraints.split_state.split_constraints.values()])}"
             )
 
+        root_subproblem_state.constraints.layer_bounds.improve(
+            network.get_current_intermediate_bounds()
+        )
+
         if self._can_stop_early(
             alpha_lbs,
             alpha_ubs,

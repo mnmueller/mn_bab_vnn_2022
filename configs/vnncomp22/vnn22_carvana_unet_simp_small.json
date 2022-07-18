@@ -23,8 +23,14 @@
   "use_gpu": true,
   "optimize_alpha": true,
   "dtype": "float32",
-  "alpha_lr": 0.1,
-  "alpha_opt_iterations": 20,
+  "alpha_lr": 0.15,
+  "alpha_opt_iterations": 15,
+    "parameter_sharing": {
+    "fully_connected": "none",
+    "conv2d": "in_channel"
+  },
+  "parameter_sharing_layer_id_filter": "layer_ids[:0]",
+  "bab_alpha_opt_iterations": 7,
   "optimize_prima": false,
   "prima_lr": 0.01,
   "prima_opt_iterations": 20,
@@ -40,7 +46,7 @@
   },
   "peak_lr_scaling_factor": 2.0,
   "final_lr_div_factor": 10.0,
-  "beta_lr": 0.05,
+  "beta_lr": 0.07,
   "branching": {
     "method": "babsr",
     "use_prima_contributions": false,
@@ -53,9 +59,9 @@
     "use_cost_adjusted_scores": false
   },
   "bab_batch_sizes": [
-    16,
     32,
-    64
+    32,
+    32
   ],
   "recompute_intermediate_bounds_after_branching": false,
   "intermediate_bounds_method": "none",

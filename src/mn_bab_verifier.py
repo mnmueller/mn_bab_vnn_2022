@@ -1191,12 +1191,7 @@ class MNBaBVerifier:
                 time_remaining = timeout - time.time()
                 time_budget = max(
                     3,
-                    int(
-                        2
-                        * time_remaining
-                        / max((verification_target - verified_so_far + 1), 6)
-                        * remaining
-                        / (remaining + verified_so_far - verification_target + 1)
+                    int(min(2 * time_remaining / (verification_target - verified_so_far + 1) * remaining / (remaining + verified_so_far - verification_target + 1), time_remaining/min(3, remaining))
                     ),
                 )
                 is_verified, best_lb, best_ub, pot_ub_inputs = self.verify_property(

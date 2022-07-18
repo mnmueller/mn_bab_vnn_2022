@@ -6,6 +6,7 @@
     32
   ],
   "outer_verifier": {
+    "forward_dp_pass": true,
     "initial_dp": true,
     "adversarial_attack": false,
     "adversarial_attack_restarts": 5,
@@ -66,6 +67,7 @@
     32
   ],
   "recompute_intermediate_bounds_after_branching": false,
+  "intermediate_bounds_method": "prima",
   "use_dependence_sets": false,
   "use_early_termination": true,
   "random_seed": 0,

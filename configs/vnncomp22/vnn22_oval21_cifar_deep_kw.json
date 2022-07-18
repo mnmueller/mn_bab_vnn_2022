@@ -53,14 +53,14 @@
     "use_cost_adjusted_scores": false
   },
   "bab_batch_sizes": [
-    16,
-    32,
-    32,
-    64,
+    128,
+    128,
+    128,
+    128,
     128
   ],
   "parameter_sharing": {
-    "fully_connected": "same_layer",
+    "fully_connected": "none",
     "conv2d": "in_channel"
   },
   "parameter_sharing_layer_id_filter": "layer_ids[:]",
