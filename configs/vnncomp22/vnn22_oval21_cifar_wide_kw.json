@@ -23,10 +23,10 @@
   "use_gpu": true,
   "optimize_alpha": true,
   "dtype": "float64",
-  "alpha_lr": 0.1,
+  "alpha_lr": 0.12,
   "alpha_opt_iterations": 20,
   "optimize_prima": true,
-  "prima_lr": 0.01,
+  "prima_lr": 0.015,
   "prima_opt_iterations": 20,
   "prima_hyperparameters": {
     "sparse_n": 50,
@@ -53,10 +53,15 @@
     "use_cost_adjusted_scores": false
   },
   "bab_batch_sizes": [
-    128,
-    256,
-    256
+    64,
+    64,
+    64
   ],
+  "parameter_sharing": {
+    "fully_connected": "none",
+    "conv2d": "in_channel"
+  },
+  "parameter_sharing_layer_id_filter": "layer_ids[:]",
   "run_BaB": true,
   "box_pass": true,
   "recompute_intermediate_bounds_after_branching": false,

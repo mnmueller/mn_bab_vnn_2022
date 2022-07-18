@@ -23,10 +23,10 @@
   "use_gpu": true,
   "optimize_alpha": true,
   "dtype": "float64",
-  "alpha_lr": 0.1,
+  "alpha_lr": 0.12,
   "alpha_opt_iterations": 20,
   "optimize_prima": true,
-  "prima_lr": 0.01,
+  "prima_lr": 0.015,
   "prima_opt_iterations": 20,
   "prima_hyperparameters": {
     "sparse_n": 50,
@@ -53,11 +53,11 @@
     "use_cost_adjusted_scores": false
   },
   "bab_batch_sizes": [
-    128,
-    128,
-    128,
-    128,
-    128
+    32,
+    32,
+    32,
+    32,
+    32
   ],
   "parameter_sharing": {
     "fully_connected": "none",

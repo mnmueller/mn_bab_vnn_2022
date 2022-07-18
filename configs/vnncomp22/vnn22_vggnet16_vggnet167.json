@@ -72,11 +72,11 @@
     16
   ],
   "domain_splitting": {
-    "initial_splits": 2,
+    "initial_splits": 1,
     "initial_split_dims": [],
-    "max_depth": 20,
+    "max_depth": 30,
     "domain": "DPF",
-    "batch_size": 1,
+    "batch_size": 2,
     "split_factor": 4
   },
   "run_BaB": true,
