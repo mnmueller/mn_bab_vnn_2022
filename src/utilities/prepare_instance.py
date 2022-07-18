@@ -164,7 +164,7 @@ def get_net_asnet_conf(
     json_config = get_config_from_json(config_path)
     parsed_config = make_config(**json_config)
 
-    if "adapt_input_dim" in config_obj:
+    if ("adapt_input_dim" in config_obj) or (benchmark_id not in net_path):
         print(f"Setting shape: {onnx_shape}")
         json_config["input_dim"] = onnx_shape
         parsed_config.input_dim = onnx_shape

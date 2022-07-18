@@ -176,7 +176,7 @@ def run_instance(
 
     if parsed_config.verifier.outer.instance_pre_filter_batch_size is not None:
         assert (
-            "unet" not in config.benchmark_instances_path
+            "unet" not in parsed_config.benchmark_instances_path
         )  # TODO: should this be supported?
         batch_size = parsed_config.verifier.outer.instance_pre_filter_batch_size
         is_verified, adv_example = verify_properties_with_deep_poly_pre_filter(
@@ -204,7 +204,7 @@ def run_instance(
             if sigmoid_encode_property:
                 gt_constraint = get_sigmoid_gt_constraint(gt_constraint)
 
-            if "unet" in config.benchmark_instances_path:
+            if "unet" in parsed_config.benchmark_instances_path:
                 gt_constraint, gt_target = get_unet_gt_constraint(
                     input_point, (input_lb, input_ub), gt_constraint
                 )
@@ -219,7 +219,7 @@ def run_instance(
                 dtype=torch.get_default_dtype(),
             )
 
-            if "unet" in config.benchmark_instances_path:
+            if "unet" in parsed_config.benchmark_instances_path:
 
                 assert gt_target
                 (is_verified, _, _, _, _,) = verifier.verify_unet_via_config(
@@ -229,7 +229,7 @@ def run_instance(
                     input_ub,
                     out_prop_form,
                     verification_target=gt_target,
-                    timeout=config.timeout + start_time,
+                    timeout=parsed_config.timeout + start_time,
                 )
 
             else:
