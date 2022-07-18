@@ -35,6 +35,6 @@ export PYTHONPATH=$PYTHONPATH:$SCRIPT_DIR/ELINA/python_interface
 
 echo "Running $TOOL_NAME for benchmark instance in category '$CATEGORY' with onnx file '$ONNX_FILE' and vnnlib file '$VNNLIB_FILE' and timeout '$TIMEOUT'. Writing to '$RESULTS_FILE'"
 
-python -O $run_file --benchmark $CATEGORY --netname $ONNX_FILE --vnnlib_spec $VNNLIB_FILE --results_path $RESULTS_FILE --timeout $TIMEOUT
+python $run_file --benchmark $CATEGORY --netname $ONNX_FILE --vnnlib_spec $VNNLIB_FILE --results_path $RESULTS_FILE --timeout $TIMEOUT
 
 exit 0

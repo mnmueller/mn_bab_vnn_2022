@@ -29,8 +29,8 @@ from src.utilities.loading.vnn_spec_loader import (  # translate_constraints_to_
 
 FILE_DIR = os.path.realpath(os.path.dirname(__file__))
 
-NET_TO_CONFIG_MAP = os.path.realpath(os.path.join(FILE_DIR, "../..","configs/net_to_config.csv"))
-META_CONFIG = os.path.realpath(os.path.join(FILE_DIR, "../..","configs/meta_config.json"))
+NET_TO_CONFIG_MAP = os.path.realpath(os.path.join(FILE_DIR, "../..", "configs/net_to_config.csv"))
+META_CONFIG = os.path.realpath(os.path.join(FILE_DIR, "../..", "configs/meta_config.json"))
 TEMP_RUN_DIR = os.path.realpath(os.path.join(FILE_DIR, "../..", "run"))
 
 def generate_constraints(
@@ -85,7 +85,7 @@ class NetworkConfig:
             return self.specific_config[net_char]
         else:
             assert self.default_config is not None
-            print("Using default config")
+            print("WARNING! Using default config.")
             return self.default_config
 
 
@@ -95,6 +95,8 @@ class MetaConfig:
     def __init__(self, meta_config: Bunch):
         self.config_mapping = {}
         for k, v in meta_config.items():
+            if not "default" in v.keys():
+                v.update(meta_config["default"])
             self.config_mapping[k] = NetworkConfig(Bunch(**v))
 
     def get_benchmark_mapping(self, benchmark: str) -> NetworkConfig:
@@ -105,6 +107,7 @@ class MetaConfig:
 
 
 def load_meta_config() -> MetaConfig:
+    assert os.path.exists(META_CONFIG), "META_CONFIG path does not exist."
     with open(META_CONFIG) as f:
         meta_conf = json.load(f)
         meta_config = MetaConfig(Bunch(**meta_conf))
@@ -219,19 +222,21 @@ def create_instance_from_vnn_spec(
     benchmark_name: str, net_path: str, spec_path: str
 ) -> None:
 
-    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    shutil.rmtree(f"{TEMP_RUN_DIR}", ignore_errors=True)
+
     net_path = os.path.realpath(os.path.join(FILE_DIR, "../../..", "vnncomp2022_benchmarks", net_path))
+    spec_path = os.path.realpath(os.path.join(FILE_DIR, "../../..", "vnncomp2022_benchmarks",spec_path))
+
+    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     net, as_network, config_path, json_config, parsed_config = get_net_asnet_conf(
         benchmark_name, net_path, device
     )
     # Get data
-    spec_path = os.path.realpath(os.path.join(FILE_DIR, "../../..", "vnncomp2022_benchmarks",spec_path))
     (inputs, input_regions, target_g_t_constraints) = get_io_constraints_from_spec(
         spec_path=spec_path, config=parsed_config, device=device
     )
 
     # Write out
-    shutil.rmtree(f"{TEMP_RUN_DIR}", ignore_errors=True)
     Path(f"{TEMP_RUN_DIR}").mkdir(parents=False, exist_ok=False)
 
     # 1. config

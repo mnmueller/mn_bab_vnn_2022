@@ -1,5 +1,6 @@
 import argparse
 import os.path
+import shutil
 import time
 from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Tuple
@@ -112,6 +113,7 @@ def run_instance(
     spec_path = os.path.realpath(os.path.join(FILE_DIR, "../..", "vnncomp2022_benchmarks", spec_path))
     res_path = os.path.realpath(os.path.join(FILE_DIR, "../..", "vnncomp2022_benchmarks", res_path))
 
+    shutil.rmtree(f"{res_path}", ignore_errors=True)
 
     metadata_path = f"{TEMP_RUN_DIR}/metadata.txt"
     config_path = f"{TEMP_RUN_DIR}/config.json"
