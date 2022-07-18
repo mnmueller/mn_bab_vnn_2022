@@ -26,7 +26,7 @@
   "use_gpu": true,
   "optimize_alpha": true,
   "dtype": "float32",
-  "alpha_lr": 0.1,
+  "alpha_lr": 0.12,
   "alpha_opt_iterations": 20,
   "parameter_sharing": {
     "fully_connected": "none",
@@ -34,8 +34,9 @@
   },
   "parameter_sharing_layer_id_filter": "layer_ids[:]",
   "optimize_prima": false,
-  "prima_lr": 0.01,
+  "prima_lr": 0.015,
   "prima_opt_iterations": 20,
+  "bab_prima_opt_iterations": 15,
   "prima_hyperparameters": {
     "sparse_n": 50,
     "K": 3,
@@ -78,7 +79,7 @@
   "run_BaB": true,
   "box_pass": true,
   "recompute_intermediate_bounds_after_branching": true,
-  "use_dependence_sets": true,
+  "use_dependence_sets": false,
   "use_early_termination": true,
   "random_seed": 0,
   "timeout": 300,

@@ -71,7 +71,7 @@
       2,
       3
     ],
-    "max_depth": 8,
+    "max_depth": 100,
     "domain": "dp",
     "batch_size": 4000,
     "split_factor": 2

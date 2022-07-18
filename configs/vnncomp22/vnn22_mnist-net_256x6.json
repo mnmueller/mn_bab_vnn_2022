@@ -5,8 +5,8 @@
   ],
   "outer_verifier": {
     "initial_dp": true,
-    "adversarial_attack": false,
-    "adversarial_attack_restarts": 5,
+    "adversarial_attack": true,
+    "adversarial_attack_restarts": 2,
     "milp": {
       "solve_via_milp": false,
       "refine_via_milp": 3,

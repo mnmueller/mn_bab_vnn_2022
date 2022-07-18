@@ -501,7 +501,8 @@ class MNBaBVerifier:
                         dim=split_dim,
                         splits=domain_splitting.split_factor,
                     )
-                    queue = [(
+                    queue = [
+                        (
                             input_region[0],
                             input_region[1],
                             (
@@ -583,10 +584,9 @@ class MNBaBVerifier:
         Optional[float],
         Optional[float],
     ]:
-        # We only have unit clauses at this point
-        unit_clauses = output_form.get_unit_clauses()
+        unit_clauses = output_form.properties_to_verify
 
-        for clause_id, const_list in unit_clauses:
+        for const_list in unit_clauses:
             # TODO add sorting by dp bounds
             is_verified = False
             pot_ub_inputs: Optional[Tensor] = None
@@ -1053,7 +1053,11 @@ class MNBaBVerifier:
                 # counterexample region returned
                 adv_example = queue[0][0]
                 out = self.network(adv_example)
-                assert (input_lb <= adv_example).__and__(input_ub >= adv_example).all()
+                assert (
+                    (input_lb <= adv_example + 1e-8)
+                    .__and__(input_ub >= adv_example - 1e-8)
+                    .all()
+                )
                 if not _evaluate_cstr(
                     properties_to_verify_orig, out.detach(), torch_input=True
                 ):
@@ -1067,6 +1071,7 @@ class MNBaBVerifier:
                 input_lb, input_ub = consolidate_input_regions(
                     [(x[0], x[1]) for x in queue if x[1] is not None]
                 )
+                self.network.reset_input_bounds()
 
         if time.time() > timeout:
             return False, None, None, None, None
