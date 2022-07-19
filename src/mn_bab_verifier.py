@@ -1152,6 +1152,36 @@ class MNBaBVerifier:
             given_up_on_so_far += int(falsified.float().sum().item())
             remaining -= verified_so_far + given_up_on_so_far
 
+            if (
+                given_up_on_so_far
+                >= len(properties_to_verify_orig) - verification_target
+            ):
+                incorrect_pixels = (
+                    self.network(ub_inputs.view(-1, *input.shape[1:])[:, :3])
+                    .view(-1, 2, *input.shape[2:])
+                    .argmax(1)
+                    != input[:, 3]
+                ).sum((1, 2))
+                max_incorrect_pixels, adv_id = incorrect_pixels.max(0)
+                if (
+                    max_incorrect_pixels
+                    > len(properties_to_verify_orig) - verification_target
+                ):
+                    print(f"Found adv example for UNET")
+                    return (
+                        False,
+                        [
+                            np.array(
+                                ub_inputs.view(-1, *input.shape[1:])[
+                                    adv_id : adv_id + 1
+                                ].cpu()
+                            )
+                        ],
+                        None,
+                        None,
+                        None,
+                    )
+
             output_form = output_form.update_properties_to_verify(
                 verified,
                 falsified,
