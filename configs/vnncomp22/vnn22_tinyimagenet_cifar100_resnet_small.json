@@ -9,7 +9,7 @@
     "forward_dp_pass": true,
     "initial_dp": true,
     "adversarial_attack": true,
-    "adversarial_attack_restarts": 1,
+    "adversarial_attack_restarts": 5,
     "milp": {
       "refine_via_milp": false
     },
