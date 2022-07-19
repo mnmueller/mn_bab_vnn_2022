@@ -18,6 +18,7 @@ from src.abstract_layers.abstract_tanh import Tanh, d_tanh, tanh
 from src.mn_bab_verifier import MNBaBVerifier
 from src.state.subproblem_state import SubproblemState
 from src.utilities.argument_parsing import get_config_from_json
+from src.utilities.attacks import _evaluate_cstr
 from src.utilities.config import Config, Dtype, make_config
 from src.utilities.initialization import seed_everything
 from src.utilities.loading.network import freeze_network, load_onnx_model
@@ -517,9 +518,7 @@ def verify_properties_with_deep_poly_pre_filter(  # noqa: C901 # TODO: simplify 
             adv_example = queue[0][0]
             out = verifier.network(adv_example)
             assert (input_lb <= adv_example).__and__(input_ub >= adv_example).all()
-            if not verifier._evaluate_cstr(
-                queue[0][-1], out.detach(), torch_input=True
-            ):
+            if not _evaluate_cstr(queue[0][-1], out.detach(), torch_input=True):
                 print("Adex found via splitting")
                 return False, [np.array(adv_example.cpu())]
             else:
