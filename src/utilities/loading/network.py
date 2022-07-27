@@ -570,6 +570,9 @@ def load_onnx_from_proto(
     elif len(onnx_shape) == 0 and path is not None and "vgg16-7" in path:
         onnx_shape = (3, 224, 224)
         pytorch_structured = pytorch_model.forward_trace_to_graph()
+    elif len(onnx_shape) == 0 and path is not None and ("test_nano" in path or "test_tiny" in path or "test_small" in path):
+        onnx_shape = (1,)
+        pytorch_structured = pytorch_model.forward_trace_to_graph()
     else:
         pytorch_structured = pytorch_model.forward_trace_to_graph()
 
