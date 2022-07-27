@@ -55,11 +55,14 @@ class Linear(nn.Linear, AbstractModule):
     ) -> AffineForm:
         assert isinstance(affine_form.coef, Tensor)
         new_coef = affine_form.coef.matmul(self.weight)
-        new_bias = 0 if self.bias is None else affine_form.coef.matmul(self.bias)
-        if (
-            len(new_bias.shape) == 3
-        ):  # in case we have a matmul on the last dimension the bias is otherwise over multiple channels
-            new_bias = new_bias.sum(dim=2)
+        if self.bias is None:
+            new_bias = 0
+        else:
+            new_bias = affine_form.coef.matmul(self.bias)
+            if (
+                len(new_bias.shape) == 3
+            ):  # in case we have a matmul on the last dimension the bias is otherwise over multiple channels
+                new_bias = new_bias.sum(dim=2)
         new_bias += affine_form.bias
         return AffineForm(new_coef, new_bias)
 
