@@ -31,6 +31,7 @@ vnn-comp-2022-sup/benchmarks/cifar100_tinyimagenet_resnet/onnx/CIFAR100_resnet_s
 vnn-comp-2022-sup/benchmarks/cifar100_tinyimagenet_resnet/onnx/TinyImageNet_resnet_medium.onnx, configs/vnncomp22/vnn22_tinyimagenet_resnet_medium.json
 vnn-comp-2022-sup/benchmarks/vggnet16_2022/onnx/vgg16-7.onnx, configs/vnncomp22/vnn22_vggnet16_vggnet167.json
 vnn-comp-2022-sup/benchmarks/tllverifybench/onnx/tllBench_n=2_N=M=[0-9]*_m=1_instance_[0-9]_[0-9].onnx, configs/vnncomp22/vnn22_tllverifybench.json
+vnn-comp-2022-sup/benchmarks/acasxu/onnx/ACAS.*.onnx, configs/vnncomp22/vnn22_acas_xu.json
 benchmarks_vnn21/verivital/Convnet_avgpool.onnx, configs/vnncomp21/vnncomp_verivital_avgpool.json
 benchmarks_vnn21/verivital/Convnet_maxpool.onnx, configs/vnncomp21/vnncomp_verivital_maxpool.json
 benchmarks_vnn21/cifar10_resnet/onnx/resnet_2b.onnx, configs/vnncomp21/vnncomp_cifar10_resnet_2b.json

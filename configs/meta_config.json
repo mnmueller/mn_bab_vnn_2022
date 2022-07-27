@@ -129,5 +129,10 @@
       "config": "configs/vnncomp22/default_config.json",
       "adapt_input_dim": true
     }
+  },
+  "acasxu": {
+    "default": {
+      "config": "configs/vnncomp22/vnn22_acas_xu.json",
+    }
   }
 }
