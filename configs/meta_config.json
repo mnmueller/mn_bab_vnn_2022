@@ -132,7 +132,7 @@
   },
   "acasxu": {
     "default": {
-      "config": "configs/vnncomp22/vnn22_acas_xu.json",
+      "config": "configs/vnncomp22/vnn22_acas_xu.json"
     }
   }
 }
