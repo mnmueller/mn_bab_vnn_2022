@@ -33,6 +33,7 @@ from src.utilities.loading.network import (
 from src.utilities.loading.vnn_spec_loader import (  # translate_constraints_to_label,
     parse_vnn_lib_prop,
 )
+from src.utilities.prepare_instance import get_network_characteristics
 from src.utilities.output_property_form import OutputPropertyForm
 
 NET_TO_CONFIG_MAP = "configs/net_to_config.csv"
@@ -99,6 +100,10 @@ def get_asnet(
     else:
         torch.set_default_dtype(torch.float32)
         net = net.float()
+
+    if len(config.input_dim) == 0:
+        print(f"Setting shape: {onnx_shape}")
+        config.input_dim = onnx_shape
 
     if config.verifier.outer.simplify_onnx:
         assert onnx_shape is not None
@@ -298,6 +303,11 @@ class VerificationInstance:
 
         device = torch.device("cuda") if self.config.use_gpu else torch.device("cpu")
 
+        if isinstance(self.network, str):
+            net, as_net = get_asnet(self.network, self.config, device)
+            self.network = as_net
+        assert isinstance(self.network, AbstractNetwork)
+
         if isinstance(self.inputs, str):
             (
                 self.inputs,
@@ -315,14 +325,11 @@ class VerificationInstance:
         n_non_zero_width = max(
             [(lb != ub).sum().item() for lb, ub in self.input_constraints]
         )
-        print(
-            f"Analyzing {n_regions} input regions with at most {n_non_zero_width}/{self.inputs[0].numel()} non-zero-width inputs."
-        )
 
-        if isinstance(self.network, str):
-            net, as_net = get_asnet(self.network, self.config, device)
-            self.network = as_net
-        assert isinstance(self.network, AbstractNetwork)
+        node_count = get_network_characteristics(as_net)
+        print(
+            f"Analyzing {n_regions} input regions with at most {n_non_zero_width}/{self.inputs[0].numel()} non-zero-width inputs and neurons-parameters: {node_count}"
+        )
 
         sigmoid_encode_property: bool = False
         if isinstance(self.network.layers[-1], Sigmoid):
@@ -532,6 +539,8 @@ def get_val_from_re_dict(key: str, dict: Dict[str, str]) -> str:
     for k, v in dict.items():
         if re.match(k, key):
             return v
+    print("WARNING! USING DEFAULT CONFIG")
+    return "configs/vnncomp22/default_config.json"
     raise KeyError
 
 

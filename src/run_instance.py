@@ -49,7 +49,8 @@ def load_io_constraints(
     inputs: List[Tensor] = []
     stack_input = torch.load(f"{input_path}/inputs.pt")
     inputs = list(torch.split(stack_input, 1, dim=0))
-    inputs = [inp.squeeze(dim=0) for inp in inputs]
+    # inputs = [inp.squeeze(dim=0) for inp in inputs]
+    assert all([inp.shape[0]==1 for inp in inputs])
 
     input_region_path = f"{TEMP_RUN_DIR}/input_regions"
     input_regions: List[Tuple[Tensor, Tensor]] = []
@@ -508,7 +509,7 @@ def verify_properties_with_deep_poly_pre_filter(  # noqa: C901 # TODO: simplify 
                     output_property_form.properties_to_verify,
                 )
             )
-        out_list, _ = verifier._conduct_input_domain_splitting(
+        queue, _ = verifier._conduct_input_domain_splitting(
             verifier.domain_splitting, queue, timeout, None
         )
         if len(queue) == 0:

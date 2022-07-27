@@ -1351,6 +1351,9 @@ class MILPNetwork:
                 var.start = feasible_activation[j]
             neuron_vars[layer_idx].append(var)
 
+        if c_val.shape:
+            if c_val.dim() > len(in_shape):
+                c_val = c_val.view(in_shape)
         c_val_for_out_neurons = c_val.broadcast_to(in_shape).flatten()
         assert len(c_val_for_out_neurons) == out_neurons
         if op == "add":
