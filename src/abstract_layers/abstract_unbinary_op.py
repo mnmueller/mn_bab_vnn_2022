@@ -23,7 +23,12 @@ class UnbinaryOp(AbstractModule):
     ) -> None:
         super(UnbinaryOp, self).__init__()
         self.op = op
-        self.const_val = const_val
+        # self.const_val = torch.nn.Parameter(const_val,requires_grad=False)
+        self.register_buffer(
+            "const_val",
+            const_val,
+            persistent=False,
+        )
         self.apply_right = apply_right
         self.output_dim = input_dim
 

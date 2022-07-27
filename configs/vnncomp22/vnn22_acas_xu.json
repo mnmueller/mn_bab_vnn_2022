@@ -1,6 +1,6 @@
 {
   "network_path": "vnn-comp-2022-sup/benchmarks/reach_prob_density/onnx/gcas.onnx.gz",
-  "input_dim": [],
+  "input_dim": [1,1,5],
   "outer_verifier": {
     "initial_dp": true,
     "adversarial_attack": true,
