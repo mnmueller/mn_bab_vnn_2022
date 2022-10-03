@@ -2,13 +2,13 @@
 This repository contains a submodule. Please make sure that you have access rights to the submodule repository for cloning. After that either clone recursively via 
 
 ```
-git clone --recurse-submodules https://gitlab.inf.ethz.ch/markmueller/prima4complete.git
+git clone --recurse-submodules https://github.com/mnmueller/mn_bab_vnn_2022.git
 ```
 
 or clone normally and initialize the submodule later on
 
 ```
-git clone https://gitlab.inf.ethz.ch/markmueller/prima4complete.git
+git clone https://github.com/mnmueller/mn_bab_vnn_2022.git
 git submodule init
 git submodule update
 ```
@@ -23,7 +23,7 @@ git lfs pull
 ```
 
 ### Installation
-This script installs a few necessary libraries, the ELINA library, clones the repo and installs the necessary dependencies. It was tested on a AWS Deep Learning AMI (Ubuntu 18.04) instance.
+This script installs a few necessary libraries, the ELINA library, clones the repo and installs the necessary dependencies. It was tested on a AWS Deep Learning AMI (Ubuntu 18.04) instance. (Note that this requires sudoer rights)
 
 ```
 source setup.sh
